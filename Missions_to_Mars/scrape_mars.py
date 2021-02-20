@@ -73,9 +73,9 @@ def scrape():
     # loop through scraped results, render portion of results that we #
     # need, and append to list of hemisphere titles                   #
     for item in mysoup:
-    temp_name = item.text.split("/")
-    hemi_name = temp_name[0].replace(" Enhancedimage", "")
-    hemi_titles.append(hemi_name)
+        temp_name = item.text.split("/")
+        hemi_name = temp_name[0].replace(" Enhancedimage", "")
+        hemi_titles.append(hemi_name)
 
 
     # set image base url #
