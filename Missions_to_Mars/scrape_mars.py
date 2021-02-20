@@ -17,13 +17,16 @@ def init_browser():
 #############################################################
 # func make_soup() scrapes page based on tag and class name #
 #############################################################
-def make_soup(browser, url, tag, class_name):
+def make_soup(browser, url, tag, class_name, find_all):
     browser.visit(url)
 
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
 
-    return soup.find_all(tag, class_=class_name)
+    if find_all:
+        return soup.find_all(tag, class_=class_name)
+    else:
+        return soup.find(tag, class_=class_name)
 
 
 ##################################################
@@ -42,11 +45,11 @@ def scrape():
     latest_url = "https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&year=2021%3Apublish_date&category=19%2C165%2C184%2C204&blank_scope=Latest"
     
     # scrape page, pull latest news title, and add to dictionary #
-    mysoup = make_soup(browser, latest_url, "div", "content_title")
+    mysoup = make_soup(browser, latest_url, "div", "content_title", True)
     mars_dict["news_title"] = mysoup[1].text
 
     # scrape same page again, pull news paragraph, and add to dictionary #
-    mysoup = make_soup(browser, latest_url, "div", "article_teaser_body")
+    mysoup = make_soup(browser, latest_url, "div", "article_teaser_body", True)
     mars_dict["news_p"] = mysoup[0].text
 
 
@@ -56,7 +59,7 @@ def scrape():
 
     # scrape page, concatenate full size image path to base url, #
     # and add to dictionary                                      #
-    mysoup = make_soup(browser, feat_img_url, "a", "showimg")
+    mysoup = make_soup(browser, feat_img_url, "a", "showimg", True)
     img_path = mysoup[0]["href"]
     mars_dict["featured_image_url"] = feat_img_url.replace("index.html", img_path)
 
@@ -65,7 +68,7 @@ def scrape():
     hemisphere_url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
 
     # scrape page #
-    mysoup = make_soup(browser, hemisphere_url, "div", "description")
+    mysoup = make_soup(browser, hemisphere_url, "div", "description", True)
 
     # create empty list for hemisphere titles #
     hemi_titles = []
@@ -95,7 +98,7 @@ def scrape():
     for hemi in hemi_url_list:
         # scrape page, pull image path, concatenate to base url, #
         # and add to list of hemisphere images                   #
-        mysoup = make_soup(browser, hemi, "img", "wide-image")
+        mysoup = make_soup(browser, hemi, "img", "wide-image", False)
         hemi_img.append(base_url + mysoup["src"])
     
     
