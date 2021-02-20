@@ -124,7 +124,9 @@ def scrape():
     mars_df = mars_df.rename(columns={0: "Aspect", 1: "Measurement"})
 
     # convert dataframe to an HTML string #
+    # and strip newline                   #
     mars_tbl_str = mars_df.to_html()
+    mars_tbl_str.replace('\n', '')
 
     # add table to mar dictionary #
     mars_dict["mars_data_tbl"] = mars_tbl_str
