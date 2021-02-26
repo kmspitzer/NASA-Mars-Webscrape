@@ -32,7 +32,7 @@
     <h1 class="display-4">Featured Mars Image</h1>
     <img class="floats" src="{{ mars.featured_image_url }}" alt="Featured Mars Img">
     <h1 class="display-4 floats">Mars Facts</h1>
-    <div class="floats">{{ mars.mars_data_tbl }}</div>
+    <div class="floats">{{ mars.mars_data_tbl | safe}}</div>
 
 
   </body>
