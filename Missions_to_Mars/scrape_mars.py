@@ -125,8 +125,9 @@ def scrape():
 
     # convert dataframe to an HTML string #
     # and strip newline                   #
-    mars_tbl_str = mars_df.to_html()
-    mars_tbl_str.replace('\n', '')
+    mars_tbl_str = mars_df.to_html(index=False)
+    mars_tbl_str = mars_tbl_str.replace('\n', '')
+    mars_tbl_str = mars_tbl_str.replace("text-align: right", "text-align: left")
 
     # add table to mar dictionary #
     mars_dict["mars_data_tbl"] = mars_tbl_str
