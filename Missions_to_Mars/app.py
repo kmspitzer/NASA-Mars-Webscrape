@@ -5,6 +5,23 @@ import pymongo
 import scrape_mars
 
 
+###################################################################
+#
+# Web Scraping Challenge      due 27-Feb-2021
+#       Kate Spitzer
+#
+# This project scrapes several Mars-related web pages and displays
+# the scraped elements on a web page.
+#
+# This script uses flask.  It reads saved data from a mongo 
+# database, and displays the page.  Upon button click, it calls a
+# scraping function to refresh the database and display the new
+# data on the page.
+#
+#
+##################################################################
+
+
 # initialize flask
 app = Flask(__name__)
 

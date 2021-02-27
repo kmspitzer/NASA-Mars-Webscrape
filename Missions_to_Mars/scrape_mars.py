@@ -3,7 +3,21 @@ import pandas as pd
 from splinter import Browser
 from webdriver_manager.chrome import ChromeDriverManager
 
-
+###################################################################
+#
+# Web Scraping Challenge      due 27-Feb-2021
+#       Kate Spitzer
+#
+# This project scrapes several Mars-related web pages and displays
+# the scraped elements on a web page.
+#
+# This script uses splinter to scrape the appropriate elements
+# off the referenced web pages, write them all to a python
+# dictionary, and pass the dictionary back to the calling
+# function.
+#
+#
+##################################################################
 
 #########################################
 # function initializes splinter browser #
