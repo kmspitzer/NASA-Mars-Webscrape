@@ -2,7 +2,6 @@
 
 # Mission to Mars
 
-   Kate Spitzer -- collaboration with Rick Spitzer
    
    For the Web Scraping Challenge, we were tasked with scraping certain elements from several Mars-related web pages, and
    displaying them on a web page of our creation.
