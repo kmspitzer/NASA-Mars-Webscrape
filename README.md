@@ -14,7 +14,7 @@
    Screenshots were taken of the resultant web page.
    
    
-  Mission_to_Mars/
+  Missions_to_Mars/
    app.py - Flask script that uses Jinja to display an HTML template.
    scrape_mars.py - scraping function which uses Splinter to extract data from the Mars-related web pages.
    mission_to_mars.ipynb - jupyter notebook used to develop and debgug scraping function.
@@ -23,9 +23,9 @@
       index.html - HTML template used to format Mars data scraped from the web.
       
       
-  ![image](/Mission_to_Mars/screenshots/mission_to_mars_scrnshot4.png)
+  ![image](/Missions_to_Mars/screenshots/mission_to_mars_scrnshot4.png)
       
-  Mission_to_Mars/screenshots/
+  Missions_to_Mars/screenshots/
       mission_to_mars_scrshot1.png - screenshot of resultant web page
       mission_to_mars_scrshot2.png - screenshot of resultant web page
       mission_to_mars_scrshot3.png - screenshot of resultant web page
