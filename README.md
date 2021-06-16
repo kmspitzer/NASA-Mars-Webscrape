@@ -23,7 +23,7 @@
       index.html - HTML template used to format Mars data scraped from the web.
       
       
-  ![image](/Missions_to_Mars/screenshots/mission_to_mars_scrnshot4.png)
+  ![image](/Missions_to_Mars/screenshots/mission_to_mars_scrshot4.png)
       
   Missions_to_Mars/screenshots/
       mission_to_mars_scrshot1.png - screenshot of resultant web page
